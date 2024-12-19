@@ -1,0 +1,34 @@
+RewriteEngine On
+# use for authentication
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Header set Access-Control-Allow-Origin *
+
+
+RewriteRule ^upload-photo$ core/upload-photo.php [L]
+
+
+RewriteRule ^recipe$ controllers/recipe/recipe.php [L]
+RewriteRule ^recipe/([0-9]+)$ controllers/recipe/recipe.php?recipeid=$1 [L]
+RewriteRule ^recipe/active/([0-9]+)$ controllers/recipe/active.php?recipeid=$1 [L]
+RewriteRule ^recipe/page/([0-9]+)$ controllers/recipe/page.php?start=$1 [L]
+RewriteRule ^recipe/search$ controllers/recipe/search.php [L]
+
+RewriteRule ^category$ controllers/category/category.php [L]
+RewriteRule ^category/([0-9]+)$ controllers/category/category.php?categoryid=$1 [L]
+RewriteRule ^category/active/([0-9]+)$ controllers/category/active.php?categoryid=$1 [L]
+RewriteRule ^category/page/([0-9]+)$ controllers/category/page.php?start=$1 [L]
+RewriteRule ^category/search$ controllers/category/search.php [L]
+
+RewriteRule ^level$ controllers/level/level.php [L]
+RewriteRule ^level/([0-9]+)$ controllers/level/level.php?levelid=$1 [L]
+RewriteRule ^level/active/([0-9]+)$ controllers/level/active.php?levelid=$1 [L]
+RewriteRule ^level/page/([0-9]+)$ controllers/level/page.php?start=$1 [L]
+RewriteRule ^level/search$ controllers/level/search.php [L]
+
+
+
+
