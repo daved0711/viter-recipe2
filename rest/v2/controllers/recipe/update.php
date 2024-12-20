@@ -14,6 +14,7 @@ if (array_key_exists("recipeid", $_GET)) {
     $recipe->recipe_serving = checkIndex($data, "recipe_serving");
     $recipe->recipe_prep_time = checkIndex($data, "recipe_prep_time");
     $recipe->recipe_image = checkIndex($data, "recipe_image");
+    // $recipe->recipe_image = $data["recipe_image"];
     $recipe->recipe_ingredients = json_encode($data["recipe_ingredients"]);
     $recipe->recipe_description = checkIndex($data, "recipe_description");
     $recipe->recipe_instruction = checkIndex($data, "recipe_instruction");

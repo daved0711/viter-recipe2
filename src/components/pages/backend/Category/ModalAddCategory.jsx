@@ -98,12 +98,11 @@ const ModalAddCategory = ({ isCategoryEdit, setIsCategoryEdit }) => {
                           onChange={handleChange}
                         />
                       </div>
-
-                     
                     </div>
                     <div className="form-action flex p-4 justify-end gap-3">
                       <button className="btn btn-add" type="submit">
-                        <SpinnerButton /> Save
+                        {mutation.isPending && <SpinnerButton />}
+                        {isCategoryEdit ? "Save" : "Add"}
                       </button>
                       <button
                         className="btn btn-cancel"

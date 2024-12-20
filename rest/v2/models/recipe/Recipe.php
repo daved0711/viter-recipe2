@@ -319,21 +319,21 @@ class Recipe
         return $query;
     }
 
-    // // name
-    // public function checkAssociation()
-    // {
-    //     try {
-    //         $sql = "select product_recipe_id from {$this->tblrecipe} ";
-    //         $sql .= "where product_recipe_id = :product_recipe_id ";
-    //         $query = $this->connection->prepare($sql);
-    //         $query->execute([
-    //             "product_recipe_id" => $this->recipe_aid,
-    //         ]);
-    //     } catch (PDOException $ex) {
-    //         $query = false;
-    //     }
-    //     return $query;
-    // }
+    // name
+    public function checkAssociation()
+    {
+        try {
+            $sql = "select product_recipe_id from {$this->tblrecipe} ";
+            $sql .= "where product_recipe_id = :product_recipe_id ";
+            $query = $this->connection->prepare($sql);
+            $query->execute([
+                "product_recipe_id" => $this->recipe_aid,
+            ]);
+        } catch (PDOException $ex) {
+            $query = false;
+        }
+        return $query;
+    }
 
 
     public function filterByStatus()

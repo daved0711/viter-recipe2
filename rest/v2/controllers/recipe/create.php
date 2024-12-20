@@ -15,6 +15,7 @@ $recipe->recipe_level = checkIndex($data, "recipe_level");
 $recipe->recipe_serving = checkIndex($data, "recipe_serving");
 $recipe->recipe_prep_time = checkIndex($data, "recipe_prep_time");
 $recipe->recipe_image = checkIndex($data, "recipe_image");
+// $recipe->recipe_image = $data["recipe_image"];
 $recipe->recipe_ingredients = json_encode($data["recipe_ingredients"]);
 $recipe->recipe_description = checkIndex($data, "recipe_description");
 $recipe->recipe_instruction = checkIndex($data, "recipe_instruction");
@@ -24,8 +25,8 @@ $recipe->recipe_created = date("Y-m-d H:i:s");
 $recipe->recipe_datetime = date("Y-m-d H:i:s");
 
 
-
-// isNameExist($recipe, $recipe->recipe_title);
+//checks newly added data if it already exists
+isNameExist($recipe, $recipe->recipe_title);
 
 $query = checkCreate($recipe);
 returnSuccess($recipe, "recipe", $query);

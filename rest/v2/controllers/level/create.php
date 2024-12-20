@@ -15,7 +15,7 @@ $level->level_created = date("Y-m-d H:i:s");
 $level->level_datetime = date("Y-m-d H:i:s");
 
 //checks newly added data if it already exists
-// isNameExist($level, $level->level_title);
+isNameExist($level, $level->level_title);
 
 
 $query = checkCreate($level);

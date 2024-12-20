@@ -1,7 +1,6 @@
 import { queryDataInfinite } from "@/components/custom-hook/queryDataInfinite";
 import SearchBarWithFilterStatus from "@/components/partials/SearchBarWithFilterStatus";
 import Status from "@/components/partials/Status";
-import ModalArchive from "@/components/partials/modal/ModalArchive";
 import ModalRestore from "@/components/partials/modal/ModalRestore";
 import {
   setIsAdd,
@@ -19,6 +18,7 @@ import IconServerError from "../partials/IconServerError";
 import LoadMore from "../partials/LoadMore";
 import TableLoader from "../partials/TableLoader";
 import ModalDelete from "../partials/modals/ModalDelete";
+import ModalArchive from "../partials/modal/ModalArchive";
 const CategoryTable = ({ setItemEdit, setIsCategoryEdit, isCategoryEdit }) => {
   const { store, dispatch } = React.useContext(StoreContext);
   const [isActive, setIsActive] = React.useState(0);
